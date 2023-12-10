@@ -10,7 +10,9 @@ async function register(login, password) {
   const passwordHash = await bcrypt.hash(password, 10)
 
   const user = await User.create({ login, password: passwordHash })
-  return user
+  const token = generate({ id: user.id })
+
+  return { user, token }
 }
 //login
 async function login(login, password) {
@@ -29,7 +31,12 @@ async function login(login, password) {
   return { token, user }
 }
 
+function getUsers(login) {
+  return User.findOne({ login })
+}
+
 module.exports = {
   register,
   login,
+  getUsers,
 }

@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const ResultSchema = mongoose.Schema(
   {
-    resutlTest: [
+    result: [
       {
         type: Boolean,
         required: true,

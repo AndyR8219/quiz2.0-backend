@@ -29,7 +29,7 @@ const TestSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   },
-  resultTest: [
+  results: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Result',

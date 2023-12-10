@@ -7,7 +7,7 @@ module.exports = async function (req, res, next) {
   const user = await User.findOne({ _id: tokenData.id })
 
   if (!user) {
-    res.send({ error: 'Authenticated user nat found' })
+    res.send({ error: 'Authenticated user not found' })
     return
   }
 
